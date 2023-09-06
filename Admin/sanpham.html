@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style type="text/css">
+		.panel {
+			width: 60%;
+			margin: 0px auto;
+			border: solid #4267b2 1px;	
+		}
+		
+		.panel-heading {
+			background-color: #4267b2;
+			padding: 10px;
+			color: white;
+		}
+
+		.panel-body {
+			padding: 10px;
+		}
+
+		.panel-body label {
+			font-weight: bold;
+		}
+
+		.form-group {
+			display: block;
+			margin-bottom: 20px;
+		}
+
+		.form-control {
+			display: block;
+			width: 98%;
+			font-Category: 15px;
+			margin-top: 10px;
+		}
+
+		.table {
+			width: 100%;
+		}
+
+		.table tr {
+			border-bottom: solid blue 1px;
+			text-align: center;
+		}
+	</style>
+    </head>
+    <body>
+        <div class="sidebar">
+          <div class="logo-details">
+            <i class='bx bx-book-bookmark'></i>
+            <span class="logo_name">Electronic Mart</span>
+          </div>
+            <ul class="nav-links">
+              <li>
+                <a href="index.html">
+                  <i class='bx bx-grid-alt' ></i>
+                  <span class="links_name">Bảng điều khiển</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="active">
+                  <i class='bx bx-box' ></i>
+                  <span class="links_name">Sản phẩm</span>
+                </a>
+              </li>
+              <li>
+                <a href="danhsachdathang.html">
+                  <i class='bx bx-list-ul' ></i>
+                  <span class="links_name">Danh sách đặt hàng</span>
+                </a>
+              </li>
+              <li>
+                <a href="thongke.html">
+                  <i class='bx bx-pie-chart-alt-2' ></i>
+                  <span class="links_name">Thống kê</span>
+                </a>
+              </li>
+              <li>
+                <a href="baocaodoanhthu.html">
+                  <i class='bx bx-coin-stack' ></i>
+                  <span class="links_name">Báo cáo doanh thu</span>
+                </a>
+              </li>
+              <li>
+                <a href="tongdondat.html">
+                  <i class='bx bx-book-alt' ></i>
+                  <span class="links_name">Tổng đơn đặt hàng</span>
+                </a>
+              </li>
+              <li>
+                <a href="quanlynhanvien.html">
+                  <i class='bx bx-user' ></i>
+                  <span class="links_name">Nhân viên</span>
+                </a>
+              </li>
+              <li>
+                <a href="quanlytaikhoan.html">
+                  <i class='bx bx-file' ></i>
+                  <span class="links_name">Tài khoản</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class='bx bx-cog' ></i>
+                  <span class="links_name">Cài đặt</span>
+                </a>
+              </li>
+              <li class="log_out">
+                <a href="#">
+                  <i class='bx bx-log-out'></i>
+                  <span class="links_name">Đăng xuất</span>
+                </a>
+              </li>
+            </ul>
+        </div>
+        <section class="home-section">
+          <nav>
+            <div class="sidebar-button">
+              <i class='bx bx-menu sidebarBtn'></i>
+              <span class="dashboard">Bảng điều khiển</span>
+            </div>
+            <div class="search-box">
+              <input type="text" placeholder="Tìm kiếm...">
+              <i class='bx bx-search' ></i>
+            </div>
+            <div class="profile-details">
+              <img src="images/profile.png" alt="">
+              <span class="admin_name">Admin</span>
+              <i class='bx bx-chevron-down' ></i>
+            </div>
+          </nav>
+          <div class="panel">
+            <div class="panel-heading" style="padding-top: 100px;">
+                Quản lý sản phẩm
+            </div>
+            <div class="panel-body">
+                <form method="post">
+                    
+                    <div class="form-group">
+                        <label>Mã Sản phẩm</label>
+                        <input type="number" name="index" id="index" value="" hidden="true">
+                        <input class="form-control" type="text" name="product_name" id="product_name" placeholder="Mã Sản phẩm">
+                    </div>
+                    <div class="form-group">
+                        <label>Tên sản phẩm</label>
+                      
+                           <input class="form-control" type="text" name="manuafaturer_name" id="manuafaturer_name" placeholder="Tên sản phẩm">
+                    </div>
+                    <div class="form-group">
+                        <label>Category:</label>
+                        <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category">
+                    </div>
+                    <div class="form-group">
+                        <label>Số lượng:</label>
+                        <input class="form-control" type="number" name="price" id="price" placeholder="Số lượng" value="" onkeyup="updateTotalPrice()">
+                    </div>
+                    <div class="form-group">
+                        <label>Mã NCC:</label>
+                        <input class="form-control" type="text" name="quantity" id="quantity" placeholder="Mã NCC:" value="" onkeyup="updateTotalPrice()">
+                    </div>
+                    <div class="form-group">
+                        <label style="text-align: left;">Tên NCC</label>
+                        <input class="form-control" type="text" name="total_price" id="total_price" value="" >
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success" type="button" onclick="addProduct()">Add Produce</button>
+                        <button class="btn btn-danger" type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="panel" style="margin-top: 20px;">
+            <div class="panel-heading">
+                Product List
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Mã SP</th>
+                            <th>Tên SP</th>
+                            <th>Category</th>
+                            <th>Số lượng</th>
+                            <th>Mã NCC:</th>
+                            <th>Tên NCC:</th>
+                                                    
+                        </tr>
+                    </thead>
+                    <tbody id="result">
+                      <!-- Dòng dữ liệu sản phẩm cố định -->
+                      <tr>
+                          <td>1</td>
+                          <td>SP001</td>
+                          <td>Smart Tivi QLED 4K 65 inch Samsung</td>
+                          <td>Tivi</td>
+                          <td>10</td>
+                          <td>NCC001</td>
+                          <td>Samsung</td>
+                          <td><button class="btn btn-warning" onclick="editProduct(0)">Edit</button></td>
+                          <td><button class="btn btn-danger" onclick="deleteProduct(0)">Delete</button></td>
+                      </tr>
+                      <tr>
+                          <td>2</td>
+                          <td>SP002</td>
+                          <td>Máy lạnh TCL Inverter 1.5 HP TAC-13CSD/XAB1I</td>
+                          <td>Máy lạnh</td>
+                          <td>5</td>
+                          <td>NCC002</td>
+                          <td>Samsung</td>
+                          <td><button class="btn btn-warning" onclick="editProduct(1)">Edit</button></td>
+                          <td><button class="btn btn-danger" onclick="deleteProduct(1)">Delete</button></td>
+                      </tr>
+                      <!-- Thêm các dòng sản phẩm cố định khác ở đây -->
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+        <script type="text/javascript">
+            var manufactureList = {
+                "Smart Tivi QLED 4K 55 inch Samsung": [
+                    "Tivi"
+                ],
+                "Điện thoại Samsung Galaxy A24 6GB": [
+                    "Điện Thoại"
+                ],
+                "Smart Tivi Samsung 4K 55 inch UA55CU8000": [
+                    "Tivi"
+                ],
+                "Điện thoại Samsung Galaxy A34 5G 128GB lắc sữa bạc hà": [
+                    "Điện Thoại"
+                ],
+                "Máy nước nóng gián tiếp Ariston 20 lít 2500W VITALY 20 SLIM 2.5 FE": [
+                    "Máy nước nóng"
+                ],
+                "Máy lạnh TCL Inverter 1.5 HP TAC-13CSD/XAB1I": [
+                    "Máy lạnh"
+                ]
+            }
+    
+            var productList = []
+    
+            var manuafaturerTag = document.getElementById('manuafaturer_name')
+            for(var key in manufactureList) {
+                manuafaturerTag.innerHTML += `<option value='${key}'>${key}</option>`
+            }
+    
+            function changeManufaturer() {
+                key = manuafaturerTag.value
+                categoryList = manufactureList[key]
+                console.log(categoryList)
+    
+                var categoruTag = document.getElementById('category_name')
+                categoruTag.innerHTML = ''
+    
+                if(categoryList != null) {
+                    for (var i = 0; i < categoryList.length; i++) {
+                        categoruTag.innerHTML += `<option value='${categoryList[i]}'>${categoryList[i]}</option>`
+                    }
+                }
+            }
+    
+            function updateTotalPrice() {
+                var price = document.getElementById('price').value
+                var quantity = document.getElementById('quantity').value
+    
+                totalPrice = price * quantity
+    
+                document.getElementById('total_price').value = totalPrice
+            }
+    
+            var count = 0
+            function addProduct() {
+                var index = document.getElementById('index').value
+                var productName = document.getElementById('product_name').value
+                var manufactureName = document.getElementById('manuafaturer_name').value
+                var categoryName = document.getElementById('category_name').value
+                var price = document.getElementById('price').value
+                var quantity = document.getElementById('quantity').value
+                var totalPrice = document.getElementById('total_price').value
+    
+                var product = {
+                    'productName': productName,
+                    'manufactureName': manufactureName,
+                    'categoryName': categoryName,
+                    'price': price,
+                    'quantity': quantity,
+                    'totalPrice': totalPrice
+                }
+    
+                if(index != '') {
+                    productList[index] = product
+                    showProduct()
+                    return;
+                }
+    
+                productList.push(product)
+    
+                document.getElementById('result').innerHTML += `<tr>
+                            <td>${++count}</td>
+                            <td>${productName}</td>
+                            <td>${manufactureName}</td>
+                            <td>${categoryName}</td>
+                            <td>${price}</td>
+                            <td>${quantity}</td>
+                            <td>${totalPrice}</td>
+                            <td><button class="btn btn-warning" onclick="editProduct(${count - 1})">Edit</button></td>
+                            <td><button class="btn btn-danger" onclick="deleteProduct(${count - 1})">Delete</button></td>
+                        </tr>`
+            }
+    
+            function deleteProduct(index) {
+                console.log(index)
+                productList.splice(index, 1)
+                showProduct();
+            }
+    
+            function showProduct() {
+                document.getElementById('result').innerHTML = ''
+    
+                for (var i = 0; i < productList.length; i++) {
+                    document.getElementById('result').innerHTML += `<tr>
+                            <td>${i+1}</td>
+                            <td>${productList[i].productName}</td>
+                            <td>${productList[i].manufactureName}</td>
+                            <td>${productList[i].categoryName}</td>
+                            <td>${productList[i].price}</td>
+                            <td>${productList[i].quantity}</td>
+                            <td>${productList[i].totalPrice}</td>
+                            <td><button class="btn btn-warning" onclick="editProduct(${i})">Edit</button></td>
+                            <td><button class="btn btn-danger" onclick="deleteProduct(${i})">Delete</button></td>
+                        </tr>`
+                }
+            }
+    
+            function editProduct(index) {
+                var product = productList[index]
+                console.log(product)
+                document.getElementById('index').value = index
+                document.getElementById('product_name').value = product.productName
+                document.getElementById('manuafaturer_name').value = product.manufactureName
+                changeManufaturer()
+                document.getElementById('category_name').value = product.categoryName
+                document.getElementById('price').value = product.price
+                document.getElementById('quantity').value = product.quantity
+                document.getElementById('total_price').value = product.totalPrice
+            }
+        </script>
+        <script>      let sidebar = document.querySelector(".sidebar");
+            let sidebarBtn = document.querySelector(".sidebarBtn");
+            sidebarBtn.onclick = function() {
+              sidebar.classList.toggle("active");
+              if(sidebar.classList.contains("active")){
+              sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+            }else
+              sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");}
+            </script>
+              </body>
+    </html>    

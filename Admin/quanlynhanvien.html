@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bx-book-bookmark'></i>
+      <span class="logo_name">Electronic Mart</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Bảng điều khiển</span>
+          </a>
+        </li>
+        <li>
+          <a href="sanpham.html">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Sản phẩm</span>
+          </a>
+        </li>
+        <li>
+          <a href="danhsachdathang.html">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Danh sách đặt hàng</span>
+          </a>
+        </li>
+        <li>
+          <a href="thongke.html">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Thống kê</span>
+          </a>
+        </li>
+        <li>
+          <a href="baocaodoanhthu.html">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Báo cáo doanh thu</span>
+          </a>
+        </li>
+        <li>
+          <a href="tongdondat.html">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Tổng đơn đặt hàng</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Nhân viên</span>
+          </a>
+        </li>
+        <li>
+          <a href="quanlytaikhoan.html">
+            <i class='bx bx-file' ></i>
+            <span class="links_name">Tài khoản</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Cài đặt</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Đăng xuất</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Quản lý nhân viên</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <img src="images/profile.png" alt="">
+        <span class="admin_name">Admin</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+    <div class="home-content" style="background: white; width:auto">
+        <div class="box" style="background: white">
+        <form action="#" method="post">    
+            <table id="emptbl" style="width: 100%; text-align:center">
+                <tr>
+                    <th>Tên nhân viên</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th> 
+                    <th>Bộ phận</th>
+                    <th>Ngày sinh</th>
+                    <th>Giới tính</th> 
+                </tr> 
+                <tr> 
+                    <td id="col0"><input type="text" name="empname[]" value="" /></td> 
+                    <td id="col1"><input type="text" name="phone[]" value="" /></td>
+                    <td id="col2"><input type="text" name="address[]" value="" /></td>  
+                    <td id="col3"> 
+                    <select name="department[]" id="dept"> 
+                    <option value="0">Select Department</option> 
+                    <option value="1">Nhân viên bán hàng</option>
+                    <option value="2">Thủ kho</option>
+                    </select> 
+                        </td>
+                        <td id="col4">
+                            <input name="Date" id="Date" value="" />
+                        </td> 
+                        <td id="col5"> 
+                    <input type="radio" name="gender[0]" value="male" />Nam 
+                    <input type="radio" name="gender[1]" value="female" />Nữ
+                        </td> 
+                </tr>  
+            </table> 
+            <table style="margin-top: 10px; padding-left:500px" > 
+                <tr> 
+                    <td><input type="button" value="Add Row" onclick="addRows()" /></td> 
+                    <td><input type="button" value="Delete Row" onclick="deleteRows()" /></td> 
+                    <td><input type="submit" value="Submit" /></td> 
+                </tr>  
+            </table> 
+         </form>
+        </div>
+        <table border="1" style="background: white; width: 100%; text-align:center; margin-top: 20px">
+            <tr>
+                <caption style="align: bottom;font-weight: bold; font-size:large">DANH SÁCH NHÂN VIÊN</caption>
+            </tr>
+            <tr style="font-weight: bold;background: #3399ff">
+                <td>Mã NV</td>
+                <td>Họ tên</td>
+                <td>Số điện thoại</td>
+                <td>Địa chỉ</td>
+                <td>Bộ phận</td>
+                <td>Ngày sinh</td>
+                <td>Giới tính</td>
+            </tr>
+            <tr>
+                <td>TK001</td>
+                <td>Phạm Ngọc Quý</td>
+                <td>0946245852</td>
+                <td>Nam Định</td>
+                <td>Thủ kho</td>
+                <td>04/12/2002</td>
+                <td>Nam</td>
+                <td><input type="button" value="Sửa" /></td>
+                <td><input type="button" value="Xóa" /></td> 
+            </tr>
+            <tr>
+                <td>TK002</td>
+                <td>Nguyễn Kiều Chi</td>
+                <td>0942536544</td>
+                <td>Hưng Yên</td>
+                <td>Thủ kho</td>
+                <td>04/04/2001</td>
+                <td>Nữ</td>
+                <td><input type="button" value="Sửa" /></td>
+                <td><input type="button" value="Xóa" /></td> 
+            </tr>
+            <tr>
+                <td>NV001</td>
+                <td>Nhân viên</td>
+                <td>0946245852</td>
+                <td>Hà Nội</td>
+                <td>Nhân viên bán hàng</td>
+                <td>04/09/2001</td>
+                <td>Nữ</td>
+                <td><input type="button" value="Sửa" /></td>
+                <td><input type="button" value="Xóa" /></td> 
+            </tr>
+            <tr>
+                <td>NV002</td>
+                <td>Vương Thị Lê Na</td>
+                <td>0946777777</td>
+                <td>Phú Thọ</td>
+                <td>Nhân viên bán hàng</td>
+                <td>06/10/2002</td>
+                <td>Nữ</td>
+                <td><input type="button" value="Sửa" /></td>
+                <td><input type="button" value="Xóa" /></td>  
+            </tr>
+            <tr>
+                <td>NV003</td>
+                <td>Đặng Hồng Tuyên</td>
+                <td>0837565542</td>
+                <td>Bắc Ninh</td>
+                <td>Nhân viên bán hàng</td>
+                <td>04/01/2000</td>
+                <td>Nam</td>
+                <td><input type="button" value="Sửa" /></td>
+                <td><input type="button" value="Xóa" /></td> 
+            </tr>
+        </table> 
+</div>
+</section>
+<script src="js/main.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>      let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".sidebarBtn");
+  sidebarBtn.onclick = function() {
+    sidebar.classList.toggle("active");
+    if(sidebar.classList.contains("active")){
+    sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+  }else
+    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+  }</script>
+</body> 
+</html>

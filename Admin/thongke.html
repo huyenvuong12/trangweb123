@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bx-book-bookmark'></i>
+      <span class="logo_name">Electronic Mart</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Bảng điều khiển</span>
+          </a>
+        </li>
+        <li>
+          <a href="sanpham.html">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Sản phẩm</span>
+          </a>
+        </li>
+        <li>
+          <a href="danhsachdathang.html">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Danh sách đặt hàng</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Thống kê</span>
+          </a>
+        </li>
+        <li>
+          <a href="baocaodoanhthu.html">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Báo cáo doanh thu</span>
+          </a>
+        </li>
+        <li>
+          <a href="tongdondat.html">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Tổng đơn đặt hàng</span>
+          </a>
+        </li>
+        <li>
+          <a href="quanlynhanvien.html" >
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Nhân viên</span>
+          </a>
+        </li>
+        <li>
+          <a href="quanlytaikhoan.html">
+            <i class='bx bx-file' ></i>
+            <span class="links_name">Tài khoản</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Cài đặt</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Đăng xuất</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Thống kê</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <img src="images/profile.png" alt="">
+        <span class="admin_name">Admin</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+    <section class="home-section">
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+</section>
+<script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontCategory = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+    let massPopChart = new Chart(myChart, {
+      type:'bar', 
+      data:{
+        labels:['Smart Tivi QLED 4K 55 inch Samsung', 'Điện thoại iPhone 14 Pro Max 128GB', 'Điện thoại Samsung Galaxy A24 6GB', 'Điện thoại OPPO Reno8 T 5G 128GB', 'Điện thoại Samsung Galaxy A34 5G 128GB', 'Smart Tivi Samsung 4K 55 inch UA55CU8000'],
+        datasets:[{
+          label:'Doanh thu',
+          data:[
+            400000000,
+            10000000,
+            160000000,
+            28000000,
+            270000000,
+            112500000,
+          ],
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:4,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          text:'Thống kê doanh thu sản phẩm',
+          fontCategory:25
+        },
+        legend:{
+          display:true,
+          position:'left',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:0,
+            right:400,
+            bottom:0,
+            top:100
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+  </script>
+  <script>      let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function() {
+      sidebar.classList.toggle("active");
+      if(sidebar.classList.contains("active")){
+      sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+    }else
+      sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }</script>
+   </section>
+</body>

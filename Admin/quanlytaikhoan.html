@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bx-book-bookmark'></i>
+      <span class="logo_name">Electronic Mart</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html" >
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Bảng điều khiển</span>
+          </a>
+        </li>
+        <li>
+          <a href="sanpham.html">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Sản phẩm</span>
+          </a>
+        </li>
+        <li>
+          <a href="danhsachdathang.html">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Danh sách đặt hàng</span>
+          </a>
+        </li>
+        <li>
+          <a href="thongke.html">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Thống kê</span>
+          </a>
+        </li>
+        <li>
+          <a href="baocaodoanhthu.html">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Báo cáo doanh thu</span>
+          </a>
+        </li>
+        <li>
+          <a href="tongdondat.html">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Tổng đơn đặt hàng</span>
+          </a>
+        </li>
+        <li>
+          <a href="quanlynhanvien.html">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Nhân viên</span>
+          </a>
+        </li>
+        <li>
+          <a href="quanlytaikhoan.html" class="active">
+            <i class='bx bx-file' ></i>
+            <span class="links_name">Tài khoản</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Cài đặt</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Đăng xuất</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Quản lý tài khoản</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <img src="images/profile.png" alt="">
+        <span class="admin_name">Admin</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+    <div class="home-content" style="background: white; width:auto">
+      <div class="box" style="background: white;">
+      <form action="#" method="post">    
+          <table id="emptbl" style="width: 100%; text-align:center">
+              <tr>
+                  <th>Tài khoản</th>
+                  <th>Mã NV</th>
+                  <th>Email</th>
+                  <th>Số điện thoại</th>
+                  <th>Loại tài khoản</th>
+              </tr> 
+              <tr> 
+                  <td id="col0"><input type="text" name="username[]" value="" /></td>
+                  <td id="col1"><input type="text" name="id[]" value="" /></td> 
+                  <td id="col2"><input type="text" name="phone[]" value="" /></td>
+                  <td id="col3"><input type="text" name="email[]" value="" /></td>
+                  <td id="col4"><input type="text" name="type[]" value="" /></td>    
+
+              </tr>  
+          </table> 
+          <table style="margin-top: 10px; padding-left:550px" > 
+              <tr> 
+                  <td><input type="button" value="Add Row" onclick="addRows()" /></td> 
+                  <td><input type="button" value="Delete Row" onclick="deleteRows()" /></td> 
+                  <td><input type="submit" value="Submit" /></td> 
+              </tr>  
+          </table> 
+       </form>
+      </div>
+      <table border="1" style="background: white; width: 100%; text-align:center; margin-top: 20px">
+        <tr>
+            <caption style="align-items: bottom;font-weight: bold;font-size:large">DANH SÁCH TÀI KHOẢN</caption>
+        </tr>
+        <tr style="font-weight: bold;background: #3399ff">
+            <td>Mã ID</td>
+            <td>Mã NV</td>
+            <td>Tài khoản</td>
+            <td>Email</td>
+            <td>Số điện thoại</td>       
+            <td>Loại tài khoản</td>
+            <td>Trạng thái</td>
+            <td>Công cụ</td>
+        </tr>
+        <tr>
+            <td>142250321</td>
+            <td>TK001</td>
+            <td>quydepzai22</td>
+            <td>quyngoc@gmail.com</td>
+            <td>0946245852</td>
+            <td>Saving account</td>
+            <td style="color: blue">Hoạt động</td>
+            <td><input type="button" value="Xem" /><input type="button" value="Sửa" /><input type="button" value="Xóa" /></td>
+
+        </tr>
+        <tr>
+            <td>142503212</td>
+            <td>TK002</td>
+            <td>chichi777</td>
+            <td>chchinguyen@gmail.com</td>
+            <td>0942536544</td>
+            <td>Saving account</td>
+            <td style="color: blue">Hoạt động</td>
+            <td><input type="button" value="Xem" /><input type="button" value="Sửa" /><input type="button" value="Xóa" /></td>
+        </tr>
+        <tr>
+            <td>145303212</td>
+            <td>NV001</td>
+            <td>hangkiue23</td>
+            <td>hangkiue23@gmail.com</td>
+            <td>0946245852</td>
+            <td>Saving account</td>
+            <td style="color: blue">Hoạt động</td>
+            <td><input type="button" value="Xem" /><input type="button" value="Sửa" /><input type="button" value="Xóa" /></td>
+        </tr>
+        <tr>
+            <td>145203212</td>
+            <td>NV002</td>
+            <td>vuonglena12</td>
+            <td>lena2355@gmail.com</td>
+            <td>0946777777</td>
+            <td>Saving account</td>
+            <td style="color: blue">Hoạt động</td>
+            <td><input type="button" value="Xem" /><input type="button" value="Sửa" /><input type="button" value="Xóa" /></td>  
+        </tr>
+        <tr>
+            <td>145205212</td>
+            <td>NV003</td>
+            <td>dngahongtuyen23</td>
+            <td>tyuepam122@gmail.com</td>
+            <td>0837565542</td>
+            <td>Current account</td>
+            <td style="color: blue">Hoạt động</td>
+            <td><input type="button" value="Xem" /><input type="button" value="Sửa" /><input type="button" value="Xóa" /></td>
+        </tr>
+    </table> 
+</div>
+</section>
+<script src="js/main.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>      let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".sidebarBtn");
+  sidebarBtn.onclick = function() {
+    sidebar.classList.toggle("active");
+    if(sidebar.classList.contains("active")){
+    sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+  }else
+    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+  }</script>
+</body> 
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bx-book-bookmark'></i>
+      <span class="logo_name">Electronic Mart</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Bảng điều khiển</span>
+          </a>
+        </li>
+        <li>
+          <a href="sanpham.html">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Sản phẩm</span>
+          </a>
+        </li>
+        <li>
+          <a href="danhsachdathang.html">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Danh sách đặt hàng</span>
+          </a>
+        </li>
+        <li>
+          <a href="thongke.html">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Thống kê</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Báo cáo doanh thu</span>
+          </a>
+        </li>
+        <li>
+          <a href="tongdondat.html">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Tổng đơn đặt hàng</span>
+          </a>
+        </li>
+        <li>
+          <a href="quanlynhanvien.html">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Nhân viên</span>
+          </a>
+        </li>
+        <li>
+          <a href="quanlytaikhoan.html">
+            <i class='bx bx-file' ></i>
+            <span class="links_name">Tài khoản</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Cài đặt</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Đăng xuất</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section" style="background-color: #c2a3a3;">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Báo cáo doanh thu</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <img src="images/profile.png" alt="">
+        <span class="admin_name">Admin</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+    <div class="mainChart" style="background-color: #c2a3a3;">
+        <canvas id="salesData"></canvas>
+        <h2 style="text-align: center;text-decoration:dashed;font-weight: bold;">Tổng doanh thu</h2>
+  
+        <div class="clearFix"></div>
+  
+        <div id="totalSales" style="width:80%;display: flex;background:#b3a3c2;margin-left:100px;">
+          <div class="col" style="padding-left: 50px; padding-top:50px;">
+            <div id="creditSales" class="progressBar"></div>
+            <h3>$36,059</h3>
+            <span class="progressTitle" style="font-Category: medium;">Credit Sales</span>
+          </div>
+          <div class="col"  style="padding: 150px;padding-top:50px">
+            <div id="channelSales" class="progressBar"></div>
+            <h3>$24,834</h3>
+            <span class="progressTitle" style="font-Category: medium;">Channel Sales</span>
+          </div>
+          <div class="col"  style="padding: 150px;  padding-top:50px">
+            <div id="directSales" class="progressBar"></div>
+            <h3>$15,650</h3>
+            <span class="progressTitle" style="font-Category: medium;">Direct Sales</span>
+          </div>
+        </div>
+  
+        <table style="width: 80%;border-collapse: collapse; margin-left:100px; background:#a3a3c2;font-Category:large;font-family:Arial, Helvetica, sans-serif">
+          <tr>
+            <th>Doanh thu tháng 4</th>
+            <th>Số lượng</th>
+            <th>Tổng</th>
+          </tr>
+  
+          <tr>
+            <td>Smart Tivi QLED 4K 55 inch Samsung</td>
+            <td>200</td>
+            <td>3.800.000VND</td>
+          </tr>
+  
+          <tr>
+            <td>Điện thoại iPhone 14 Pro Max 128GB</td>
+            <td>30</td>
+            <td>700.000VND</td>
+          </tr>
+  
+          <tr>
+            <td>Điện thoại Samsung Galaxy A24 6GB</td>
+            <td>36</td>
+            <td>900.000VND</td>
+          </tr>
+  
+          <tr>
+            <td>Điện thoại OPPO Reno8 T 5G 128GB</td>
+            <td>25</td>
+            <td>700.000VND</td>
+          </tr>
+          <tr>
+            <td>Điện thoại Samsung Galaxy A34 5G 128GB</td>
+            <td>100</td>
+            <td>1.000.000</td>
+          </tr>
+          <tr>
+            <td>Smart Tivi Samsung 4K 55 inch UA55CU8000</td>
+            <td>20</td>
+            <td>800.000</td>
+          </tr>
+          <tr>
+            <td>Máy lạnh Daikin Inverter 2 HP FTKF50XVMV</td>
+            <td>4</td>
+            <td>40.000</td>
+          </tr>
+          <tr>
+            <td>Máy lạnh TCL Inverter 1.5 HP TAC-13CSD/XAB1I</td>
+            <td>12</td>
+            <td>300.000</td>
+          </tr>
+        </table>
+      </div>
+      <div class="button" style="padding-left: 1000px">
+        <a href="pdf/baocao.pdf"><input type="button" value="In báo cáo" /></a>
+      </div>
+      </section>
+      <script src="js/main.js">
+      </script>
+      <script>   let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function() {
+          sidebar.classList.toggle("active");
+          if(sidebar.classList.contains("active")){
+          sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+        }else
+          sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }</script>
+      </body>
+
